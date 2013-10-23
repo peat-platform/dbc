@@ -17,7 +17,7 @@ dbc.hasMember(object, 'action')
 ```
 The dbc.hasMember function takes two parameters: 1) a JavaScript object and 2) a member name as a string. It throws and exception if the object doesn't contains the member.
 
-##Conributors
+## Conributors
 Donal McCarthy (dmccarthy@tssg.org)
 David Benson   (dbenson@tssg.org)
 
