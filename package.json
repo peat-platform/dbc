@@ -2,7 +2,7 @@
   "name": "dbc",
   "description": "Design By Contract Helper Fucntions",
   "version": "0.1.0",
-  "homepage": "",
+  "homepage": "http://openi-ict.eu",
   "author": {
     "name": "dmccarthy dbenson",
     "email": "dmccarthy@tssg.org dbenson@tssg.org"
