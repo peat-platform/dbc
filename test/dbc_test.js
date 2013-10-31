@@ -24,14 +24,55 @@ var dbc = require(base_path + '../lib/main.js');
     test.ifError(value)
 */
 
-exports['awesome'] = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  'no args': function(test) {
-    // tests here
-    test.equal('awesome', 'awesome', 'should be awesome.');
-    test.done();
-  }
+exports['test assert function'] = {
+
+    'contract fulfilled by assertion': function (test) {
+
+        // The contract is fulfilled if a is not equal b.
+        test.doesNotThrow(function () {
+            dbc.assert('a' != 'b', 'a and b should not be equa')
+        });
+
+        test.done();
+
+    },
+
+    'contract not fulfilled and exception thrown': function (test) {
+
+        // The contract is not fulfilled if a and a are equal.
+        test.throws(function () {
+            dbc.assert('a' != 'a', 'a and a should be equal')
+        });
+
+        test.done();
+
+    }
+};
+
+exports['test hasMember function'] =  {
+
+    'contract fulfilled and exception not thrown': function (test) {
+
+        // Test object
+        var testObj = {testProp:'test'};
+
+        test.doesNotThrow( function() {
+           dbc.hasMember(testObj, 'testProp')
+        });
+
+        test.done();
+    },
+    'contract not fulfilled and exception thrown': function (test) {
+
+        // Test object
+        var testObj = {};
+
+        // Contract is fulfilled if test object has property testProp.
+        test.throws( function() {
+            dbc.hasMember(testObj, 'testProp')
+        });
+
+        test.done();
+
+    }
 };
