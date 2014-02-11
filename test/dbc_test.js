@@ -51,28 +51,108 @@ exports['test assert function'] = {
 
 exports['test hasMember function'] =  {
 
-    'contract fulfilled and exception not thrown': function (test) {
+   'contract fulfilled and exception not thrown': function (test) {
 
-        // Test object
-        var testObj = {testProp:'test'};
+      // Test object
+      var testObj = {testProp:'test'};
 
-        test.doesNotThrow( function() {
-           dbc.hasMember(testObj, 'testProp')
-        });
+      test.doesNotThrow( function() {
+         dbc.hasMember(testObj, 'testProp')
+      });
 
-        test.done();
-    },
-    'contract not fulfilled and exception thrown': function (test) {
+      test.done();
+   },
+   'contract not fulfilled and exception thrown': function (test) {
 
-        // Test object
-        var testObj = {};
+      // Test object
+      var testObj = {};
 
-        // Contract is fulfilled if test object has property testProp.
-        test.throws( function() {
-            dbc.hasMember(testObj, 'testProp')
-        });
+      // Contract is fulfilled if test object has property testProp.
+      test.throws( function() {
+         dbc.hasMember(testObj, 'testProp')
+      });
 
-        test.done();
+      test.done();
 
-    }
+   }
+};
+
+exports['test hasMemberIn function'] =  {
+
+   'contract fulfilled and exception not thrown': function (test) {
+
+      // Test object
+      var testObj = {testProp:'test'};
+
+      test.doesNotThrow( function() {
+         dbc.hasMemberIn(testObj, 'testProp', ['test', 'other', 'yes'])
+      });
+
+      test.done();
+   },
+   'contract not fulfilled and exception thrown': function (test) {
+
+      // Test object
+      var testObj = {testProp:'test'};
+
+      // Contract is fulfilled if test object has property testProp.
+      test.throws( function() {
+         dbc.hasMemberIn(testObj, 'testProp', ['tests', 'other', 'yes'])
+      });
+
+      test.done();
+
+   },
+   'empty object and exception thrown': function (test) {
+
+      // Test object
+      var testObj = {};
+
+      // Contract is fulfilled if test object has property testProp.
+      test.throws( function() {
+         dbc.hasMemberIn(testObj, 'testProp', ['tests', 'other', 'yes'])
+      });
+
+      test.done();
+
+   }
+};
+
+exports['conditional hasMember function'] =  {
+
+   'contract fulfilled and exception not thrown': function (test) {
+
+      // Test object
+      var testObj = {testProp:'test'};
+
+      test.doesNotThrow( function() {
+         dbc.conditionalHasMember(testObj, 'testProp', true)
+      });
+
+      test.done();
+   },
+   'conditional false exception not thrown': function (test) {
+
+      // Test object
+      var testObj = {};
+
+      test.doesNotThrow( function() {
+         dbc.conditionalHasMember(testObj, 'testProp', false)
+      });
+
+      test.done();
+   },
+   'contract not fulfilled and exception thrown': function (test) {
+
+      // Test object
+      var testObj = {};
+
+      // Contract is fulfilled if test object has property testProp.
+      test.throws( function() {
+         dbc.conditionalHasMember(testObj, 'testProp', true)
+      });
+
+      test.done();
+
+   }
 };
