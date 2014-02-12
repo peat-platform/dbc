@@ -84,6 +84,8 @@ exports['test hasMemberIn function'] =  {
       // Test object
       var testObj = {testProp:'test'};
 
+      //dbc.hasMember(testObj, 'testPro')
+
       test.doesNotThrow( function() {
          dbc.hasMemberIn(testObj, 'testProp', ['test', 'other', 'yes'])
       });
