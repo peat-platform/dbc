@@ -28,5 +28,8 @@
     "grunt": "^0.4.5",
     "grunt-config": ""
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "loglet": "git://github.com/OPENi-ict/loglet"
+  }
 }
