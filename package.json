@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:OPENi-ict/dbc.git"
+    "url": "git@github.com:peat-platform/dbc.git"
   },
   "licenses": [
     {
@@ -31,6 +31,6 @@
   },
   "keywords": [],
   "dependencies": {
-    "loglet": "git://github.com/OPENi-ict/loglet"
+    "loglet": "git://github.com/peat-platform/loglet"
   }
 }
