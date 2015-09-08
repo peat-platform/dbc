@@ -31,6 +31,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "loglet": "git://github.com/peat-platform/loglet"
+    "loglet": "git://github.com/peat-platform/loglet",
+    "chai": "3.2.0"
   }
 }
